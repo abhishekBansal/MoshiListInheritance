@@ -22,3 +22,9 @@ class ImageSelectionOption(
     @Json(name = "active_image")
     val image: String?,
 ): SelectionOption(id, value)
+
+@JsonClass(generateAdapter = true)
+class QuestionResponse<T> (
+    override val id: String,
+    val answer: T?,
+): OptionV2
